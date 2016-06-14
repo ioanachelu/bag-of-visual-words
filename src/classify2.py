@@ -37,7 +37,7 @@ def main():
   all_features = utils.extractSift(test_images_paths)
 
   y_pred = {}
-  for model_number in xrange(0, 7):
+  for model_number in xrange(0, 1):
     # model_number = parseArgs()
     # model_number = int(model_number)
 

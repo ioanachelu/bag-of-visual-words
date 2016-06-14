@@ -47,8 +47,8 @@ def compute_codebook(all_features, i):
     # kmeans_estimator.fit(all_features_array)
     # codebook = kmeans_estimator.cluster_centers_
     print "Clustering %d features in %d clusters" % (len(all_features_array), nclusters)
-    all_features_array_whiten = whiten(all_features_array)
-    all_features_array_whiten = all_features_array_whiten.astype(np.float32)
+    # all_features_array_whiten = whiten(all_features_array)
+    all_features_array_whiten = all_features_array.astype(np.float32)
     # retVal, bestLabel, codebook = cv2.kmeans(all_features_array_whiten, nclusters, criteria, attempts, flags)
     codebook, distortion = kmeans(all_features_array_whiten,
                                      nclusters,
@@ -71,7 +71,7 @@ def parseArgs():
 def main():
   # i = parseArgs()
   # i = int(i)
-  for i in xrange(2, 100):
+  for i in xrange(1, 100):
     print "---------------------"
     print "## loading the images and extracting the sift features for ensemble %d" % i
     all_files, all_features, image_label_dict, all_files_labels = extract_features(i)
